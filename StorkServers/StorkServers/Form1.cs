@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace StorkServers
 {
@@ -15,6 +16,19 @@ namespace StorkServers
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            RemoteDesktopControllerTabPage insRdpTp = new RemoteDesktopControllerTabPage();
+            //insRdpTp.Text = _curServer.Name;
+            this.tabControl1.ItemSize = new Size(100, 19);
+            this.tabControl1.SizeMode = TabSizeMode.Fixed;
+            tabControl1.TabPages.Add(insRdpTp);
+            tabControl1.SelectTab(insRdpTp);
+            insRdpTp.Connect();
+            //sqlCon.rdpCount++;
+            //tsbDisconnect.Enabled = true;
         }
     }
 }

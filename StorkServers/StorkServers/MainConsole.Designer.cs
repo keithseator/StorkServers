@@ -1,6 +1,6 @@
 ﻿namespace StorkServers
 {
-    partial class Form1
+    partial class MainConsole
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainConsole));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.btnConnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -50,15 +51,16 @@
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
-            // Form1
+            // MainConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 599);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MainConsole";
+            this.Text = "Stork Servers";
             this.ResumeLayout(false);
 
         }

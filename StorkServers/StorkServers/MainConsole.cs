@@ -13,9 +13,23 @@ namespace StorkServers
 {
     public partial class MainConsole : Form
     {
+        List<Location> locations = new List<Location>();
+        List<Server> servers = new List<Server>();
+
+
         public MainConsole()
         {
             InitializeComponent();
+
+            DataAccess db = new DataAccess();
+            servers = db.GetServers();
+            locations = db.GetLocations();
+
+            foreach (Location location in locations)
+            {
+                treeViewServers.Nodes.Add(location.Location_Name);
+            }
+
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -26,6 +40,11 @@ namespace StorkServers
             tabControl1.TabPages.Add(insRdpTp);
             tabControl1.SelectTab(insRdpTp);
             insRdpTp.Connect();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,8 +31,8 @@ namespace StorkServers
         private void SetRdpClientProperties()
         {
             string pathToCredent = Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%\\Remote Desktop Console\\Cred\\Cred_id.txt");
-            string decryptedUserName = "";
-            string decryptedPassword = "";
+            //string decryptedUserName = "";
+            //string decryptedPassword = "";
             //MessageBox.Show(System.IO.File.Exists(pathToCredent) ? "File exists." : "File does not exist.");
 
             // Read the encrypted credentials from Cred_id.txt then decrypt them to two strings

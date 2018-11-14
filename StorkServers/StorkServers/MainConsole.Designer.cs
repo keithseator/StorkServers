@@ -31,19 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainConsole));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.btnConnect = new System.Windows.Forms.Button();
+            this.treeViewServers = new System.Windows.Forms.TreeView();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Location = new System.Drawing.Point(80, 12);
+            this.tabControl1.Location = new System.Drawing.Point(152, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1110, 536);
+            this.tabControl1.Size = new System.Drawing.Size(1038, 536);
             this.tabControl1.TabIndex = 0;
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(100, 564);
+            this.btnConnect.Location = new System.Drawing.Point(13, 564);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 1;
@@ -51,11 +53,30 @@
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
+            // treeViewServers
+            // 
+            this.treeViewServers.Location = new System.Drawing.Point(13, 13);
+            this.treeViewServers.Name = "treeViewServers";
+            this.treeViewServers.Size = new System.Drawing.Size(121, 535);
+            this.treeViewServers.TabIndex = 2;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(114, 564);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 3;
+            this.btnLoad.Text = "Load Data";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // MainConsole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 599);
+            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.treeViewServers);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -69,6 +90,8 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.TreeView treeViewServers;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
 

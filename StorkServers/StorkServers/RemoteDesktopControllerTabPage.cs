@@ -30,7 +30,7 @@ namespace StorkServers
 
         private void SetRdpClientProperties()
         {
-            string pathToCredent = Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%\\Remote Desktop Console\\Cred\\Cred_id.txt");
+            //string pathToCredent = Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%\\Remote Desktop Console\\Cred\\Cred_id.txt");
             //string decryptedUserName = "";
             //string decryptedPassword = "";
             //MessageBox.Show(System.IO.File.Exists(pathToCredent) ? "File exists." : "File does not exist.");

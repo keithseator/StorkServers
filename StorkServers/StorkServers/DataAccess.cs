@@ -10,7 +10,8 @@ namespace StorkServers
 {
     public class DataAccess
     {
-        string connString = Helper.CnnVal("Keith-PC");
+        string connString = Helper.CnnVal("Docker-Image");
+        //string connString = Helper.CnnVal("Keith-PC");
 
         public List<Server> GetServers()
         {

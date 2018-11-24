@@ -17,7 +17,7 @@ namespace StorkServers
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(connString))
             {
-                return connection.Query<Server>($"SELECT * FROM Server_Names").ToList();
+                return connection.Query<Server>($"Get_Server_Info").ToList();
             }
         }
 
@@ -25,7 +25,7 @@ namespace StorkServers
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(connString))
             {
-                return connection.Query<Location>($"SELECT * FROM Locations").ToList();
+                return connection.Query<Location>($"Get_Locations").ToList();
             }
         }
     }

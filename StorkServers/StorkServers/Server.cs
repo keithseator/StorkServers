@@ -13,5 +13,8 @@ namespace StorkServers
         public string Name { get; set; }
 
         public string IP_Address { get; set; }
+
+        public string Location_Name { get; set; }
+
     }
 }

@@ -13,14 +13,21 @@ namespace StorkServers
 {
     public partial class MainConsole : Form
     {
-        List<Location> locations = new List<Location>();
-        List<Server> servers = new List<Server>();
+
+        public static List<Location> locations = new List<Location>();
+        public static List<Server> servers = new List<Server>();
 
 
         public MainConsole()
         {
             InitializeComponent();
 
+            LoadTree();
+
+        }
+
+        void LoadTree()
+        {
             DataAccess db = new DataAccess();
             servers = db.GetServers();
             locations = db.GetLocations();
@@ -38,28 +45,27 @@ namespace StorkServers
                                     .ToArray();
 
                 treeNodes[0].Nodes.Add(server.Name);
-
-                //foreach (TreeNode tr in treeNodes)
-                //{
-                //    //MessageBox.Show(tr.ToString());
-                //    tr.Nodes.Add(server.Name);
-                //}
             }
+            treeViewServers.ExpandAll();
+
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
+            var treeViewServer = treeViewServers.SelectedNode.Text;
+            Server selectedServer = servers.Find(s => s.Name == treeViewServer);
+
             RemoteDesktopControllerTabPage insRdpTp = new RemoteDesktopControllerTabPage();
             this.tabControl1.ItemSize = new Size(100, 19);
             this.tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.TabPages.Add(insRdpTp);
             tabControl1.SelectTab(insRdpTp);
-            insRdpTp.Connect();
+            insRdpTp.Connect(selectedServer);
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void btnAddServer(object sender, EventArgs e)
         {
-
+            MessageBox.Show("hello");
         }
     }
 }

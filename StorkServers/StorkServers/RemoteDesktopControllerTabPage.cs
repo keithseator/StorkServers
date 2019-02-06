@@ -48,22 +48,25 @@ namespace StorkServers
             //rdp.UserName = decryptedUserName;
             //rdp.Domain = "rbg";
 
-            rdp.Server = "Server2016-1";
-            rdp.UserName = "Administrator";
-            //rdp.Domain = "rbg";
+            rdp.Server = "192.168.80.11";
+            rdp.UserName = "administrator";
+            rdp.Domain = "k";
 
             //rdp.AdvancedSettings8.ClearTextPassword = decryptedPassword;
             //rdp.AdvancedSettings8.EnableCredSspSupport = true;
 
-            rdp.AdvancedSettings8.ClearTextPassword = "Pa55w0rd";
+            rdp.AdvancedSettings8.ClearTextPassword = "a";
             rdp.AdvancedSettings8.EnableCredSspSupport = true;
+            rdp.AdvancedSettings8.NegotiateSecurityLayer = true;
 
             rdp.Dock = DockStyle.Fill;
         }
 
-        public void Connect()
+        public void Connect(Server serverNameorIP)
         {
+            //MessageBox.Show(serverNameorIP.Name);
             SetRdpClientProperties();
+            rdp.Server = serverNameorIP.IP_Address;
             rdp.Connect();
         }
     }
